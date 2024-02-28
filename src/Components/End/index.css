@@ -1,0 +1,34 @@
+.thankyou-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../Assets/bg.png);
+    background-size: cover;
+}
+
+.thankyou-page .intro-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: -5rem;
+    gap: 30px;
+}
+
+.thankyou-page .intro-container h1 {
+    max-width: 600px;
+    text-align: center;
+}
+
+.thankyou-page .intro-container button {
+    font-size: 1.5em;
+    padding: 1rem 3rem;
+    width: 50%;
+    border: 3px solid #000;
+    text-transform: uppercase;
+    font-family: 'Ryde-bold';
+    border-radius: 10px;
+    cursor: pointer;
+}
