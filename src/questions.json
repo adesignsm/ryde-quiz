@@ -1,0 +1,94 @@
+{
+    "questions": [
+      {
+        "question": "Identify the genuine dance workout:",
+        "options": [
+          "Tango Tone (Tango + Toning exercises)",
+          "Aqua Zumba (Zumba in water)",
+          "Disco Lift (Disco dancing with weightlifting)"
+        ],
+        "correctAnswer": "Aqua Zumba (Zumba in water)"
+      },
+      {
+        "question": "Which running trend actually exists?",
+        "options": [
+          "Retro Running (Running in retro outfits)",
+          "Silent Running (Running without music or talking)",
+          "Karaoke Running (Running while singing karaoke)"
+        ],
+        "correctAnswer": "Karaoke Running (Running while singing karaoke)"
+      },
+      {
+        "question": "Spot the real cycling class:",
+        "options": [
+          "Blacklight Cycling (Cycling in the dark with black lights)",
+          "Cinema Cycling (Cycling while watching a movie)",
+          "Underwater Cycling (Cycling in a pool)"
+        ],
+        "correctAnswer": "Underwater Cycling (Cycling in a pool)"
+      },
+      {
+        "question": "Which is a real aquatic workout?",
+        "options": [
+          "Paddleboard Yoga (Yoga on a paddleboard)",
+          "Shark Swim (Swimming workout with a shark fin)",
+          "Bubble Aerobics (Aerobics in a bubble suit in water)"
+        ],
+        "correctAnswer": "Paddleboard Yoga (Yoga on a paddleboard)"
+      },
+      {
+        "question": "Pick the actual martial arts fusion class:",
+        "options": [
+          "Piloxing (Pilates + Boxing)",
+          "Kung Fu Yoga (Kung Fu + Yoga)",
+          "Ballet Judo (Ballet + Judo)"
+        ],
+        "correctAnswer": "Piloxing (Pilates + Boxing)"
+      },
+      {
+        "question": "Which unusual yoga class can you actually attend?",
+        "options": [
+          "Fire Yoga (Yoga near an open flame)",
+          "Heavy Metal Yoga (Yoga with Heavy Metal music)",
+          "Sky Yoga (Yoga in a simulated sky environment)"
+        ],
+        "correctAnswer": "Heavy Metal Yoga (Yoga with Heavy Metal music)"
+      },
+      {
+        "question": "Determine the real strength training trend:",
+        "options": [
+          "VR Weightlifting (Weightlifting in Virtual Reality)",
+          "Parkour Lifting (Weightlifting with parkour elements)",
+          "Ice Fitness (Working out in a room made of ice)"
+        ],
+        "correctAnswer": "VR Weightlifting (Weightlifting in Virtual Reality)"
+      },
+      {
+        "question": "Identify the genuine balance workout:",
+        "options": [
+          "Stilts Pilates (Pilates on stilts)",
+          "Slackline Fitness (Exercises on a slackline)",
+          "Balloon Balance (Balancing on inflatable balloons)"
+        ],
+        "correctAnswer": "Slackline Fitness (Exercises on a slackline)"
+      },
+      {
+        "question": "Which of these is a real group fitness class?",
+        "options": [
+          "Jungle Gymnastics (Gymnastics inspired by jungle movements)",
+          "Bungee Workout (Workout with a bungee harness)",
+          "Mirror Dance (Dance in front of a mirror with light effects)"
+        ],
+        "correctAnswer": "Bungee Workout (Workout with a bungee harness)"
+      },
+      {
+        "question": "Which meditation trend is real?",
+        "options": [
+          "Choco-Meditation (Meditation + Chocolate tasting)",
+          "Gato-Meditation (Meditation with Cats)",
+          "AeroMeditation (Meditation in the air)"
+        ],
+        "correctAnswer": "Gato-Meditation (Meditation with Cats)"
+      }
+    ]
+}  
