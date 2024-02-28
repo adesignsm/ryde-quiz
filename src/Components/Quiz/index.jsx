@@ -1,4 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { push, ref } from "firebase/database";
+import { db } from "../../firebase";
 
 import './index.css';
 import questions from '../../questions.json';
@@ -8,6 +10,7 @@ import YELLOW_BG from '../../Assets/yellow-bg.png';
 import BLUE_BG from '../../Assets/blue-bg.png';
 
 import LOGO from '../../Assets/logo.svg';
+import { End } from '../End';
 
 export const Quiz = ({ user }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -55,6 +58,7 @@ export const Quiz = ({ user }) => {
                 if (currentIndex === Object.values(questions)[0].length - 1) {
                     console.log("Last question answered.");
                     setLastQuestionAnswered(true);
+                    pushDataToFirebase();
                 }
             }, 1000);
         } else {
@@ -62,50 +66,69 @@ export const Quiz = ({ user }) => {
         }
     }
 
+    const pushDataToFirebase = () => {
+        const userDataWithAnswers = {
+            name: user.name,
+            email: user.email,
+            answers: answers
+        };
+
+        const userAnswersRef = ref(db, `user_answers`);
+        push(userAnswersRef, userDataWithAnswers).then(() => {
+            console.log("Data pushed to Firebase successfully!");
+        }).catch((error) => {
+            console.error("Error pushing data to Firebase: ", error);
+        });
+    }
+
     console.log(answers)
  
     return (
         <>
-            <div className='quiz-container'>
-                <div className='left-column' style={backgroundStyle}>
-                    <div className='header'>
-                        <img src={LOGO} />
-                        <h1>Question {count}/10</h1>
+           {!lastQuestionAnswered ? (
+                <div className='quiz-container'>
+                    <div className='left-column' style={backgroundStyle}>
+                        <div className='header'>
+                            <img src={LOGO} />
+                            <h1>Question {count}/10</h1>
+                        </div>
+                        <h1 className='question'>{Object.values(questions)[0][currentIndex].question}</h1>
                     </div>
-                    <h1 className='question'>{Object.values(questions)[0][currentIndex].question}</h1>
-                </div>
-                <div className='right-column'>
-                    <div className='answers'>
-                        {Object.values(questions)[0][currentIndex].options.map((option, index) => {
-                            return (
-                                <div className='answer'>
-                                    <input 
-                                        type="checkbox" 
-                                        className='answer' 
-                                        name="answer" 
-                                        value={option}
-                                        checked={checkedIndex === index}
-                                        onChange={() => handleCheckboxChange(index)}
-                                    />
-                                    <label 
-                                        htmlFor="answer"
-                                        className={
-                                            nextQuestion ? (
-                                                option === Object.values(questions)[0][currentIndex].correctAnswer
-                                                    ? 'correct-answer'
-                                                    : 'wrong-answer'
-                                            ) : ''
-                                        }
-                                    >
-                                        {option}
-                                    </label>
-                                </div>
-                            )
-                        })}
-                        <button className='next-button' onClick={() => handleNextButton()}>Continue</button>
+                    <div className='right-column'>
+                        <div className='answers'>
+                            {Object.values(questions)[0][currentIndex].options.map((option, index) => {
+                                return (
+                                    <div className='answer'>
+                                        <input 
+                                            type="checkbox" 
+                                            className='answer' 
+                                            name="answer" 
+                                            value={option}
+                                            checked={checkedIndex === index}
+                                            onChange={() => handleCheckboxChange(index)}
+                                        />
+                                        <label 
+                                            htmlFor="answer"
+                                            className={
+                                                nextQuestion ? (
+                                                    option === Object.values(questions)[0][currentIndex].correctAnswer
+                                                        ? 'correct-answer'
+                                                        : 'wrong-answer'
+                                                ) : ''
+                                            }
+                                        >
+                                            {option}
+                                        </label>
+                                    </div>
+                                )
+                            })}
+                            <button className='next-button' onClick={() => handleNextButton()}>Continue</button>
+                        </div>
                     </div>
                 </div>
-            </div>
+           ) : (
+            <End />
+           )}
         </>
     )
 }
